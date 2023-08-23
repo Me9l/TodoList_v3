@@ -38,7 +38,7 @@ const CheckCircle = styled.div`
     margin-right: 20px;
     cursor: pointer;
 ${props =>
-    props.done &&
+    props.$done &&
     css`
         border: 1px solid #38d9a9;
         color: #38d9a9;
@@ -49,7 +49,7 @@ const Text = styled.div`
  font-size: 21px;
  color: #495057;
 ${props =>
-    props.done &&
+    props.$done &&
     css`
         color: #ced4da;
     `}
@@ -61,10 +61,10 @@ function TodoItem({ id, done, text }) {
     const onRemove = () => dispatch({ type: 'REMOVE', id });
     return (
         <TodoItemBlock>
-            <CheckCircle done={done} onClick={onToggle}>
+            <CheckCircle $done={done} onClick={onToggle}>
                 {done && <MdDone />}
             </CheckCircle>
-            <Text done={done}>{text}</Text>
+            <Text $done={done}>{text}</Text>
             <Remove onClick={onRemove}>
                 <MdDelete />
             </Remove>
