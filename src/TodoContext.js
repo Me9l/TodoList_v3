@@ -1,5 +1,8 @@
 import React, { useReducer, createContext, useContext, useRef } from 'react';
-
+    // 'react' lib에서 React 는 export default 된 것.
+    // export default 를 import 받을 때 이름 변경이 가능하다.
+    // { useReducer ... etc } 는 export 된 것.
+    // context.js 는 component 상위 directory에 위치해야 한다.
 const initialTodos = [
     {
         id: 1,
